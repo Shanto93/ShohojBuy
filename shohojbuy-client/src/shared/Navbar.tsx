@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import logo from "./../assets/logo.svg";
 import { Link, NavLink } from "react-router";
 
-const Navbar = () => {
+interface NavbarProps {
+  toggleSidebar: () => void;
+}
+
+const Navbar = ({ toggleSidebar }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -12,7 +16,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-[#1e1b4b] text-white shadow-xl backdrop-blur-md border-b border-white/10 top-0 z-50">
+    <nav className="bg-[#1e1b4b] text-white shadow-xl z-50 sticky top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/">
@@ -20,7 +24,7 @@ const Navbar = () => {
               <img
                 className="w-20 sm:w-20 md:w-24 h-auto object-contain"
                 src={logo}
-                alt="SmartLib Logo"
+                alt="Shohoj Buy Logo"
               />
               <span className="text-xl md:text-2xl font-bold tracking-wider text-white hover:tracking-widest transition-all duration-300">
                 Shohoj Buy
@@ -33,9 +37,14 @@ const Navbar = () => {
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
-            <NavLink to="/cart" className={navLinkClass}>
-              Cart
-            </NavLink>
+
+            {/* Cart toggle button */}
+            <button
+              onClick={toggleSidebar}
+              className="text-white hover:text-[#18dcff] transition"
+            >
+              <ShoppingCart size={24} />
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -60,13 +69,17 @@ const Navbar = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/cart"
-            className={navLinkClass}
-            onClick={() => setIsOpen(false)}
+
+          {/* Cart button in mobile */}
+          <button
+            onClick={() => {
+              toggleSidebar();
+              setIsOpen(false);
+            }}
+            className="text-white hover:text-[#18dcff] block px-4 py-2 font-medium"
           >
             Cart
-          </NavLink>
+          </button>
         </div>
       )}
     </nav>
