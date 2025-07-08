@@ -8,8 +8,8 @@ ShohojBuy is a simple and responsive e-commerce web application that allows user
 ## Live Demo
 
 You can access the live project here:  
-- [ShohojBuy- Frontend](https://shohojbuy-client.vercel.app/)
-- [ShohojBuy - Backend](https://shohoj-buy-server.vercel.app/)
+- [ShohojBuy- Frontend](https://shohoj-buy.vercel.app/)
+- [ShohojBuy - Backend](https://shohojbuy-serverr.vercel.app)
 
 ## Features
 
@@ -154,7 +154,7 @@ In your backend folder root, add a `vercel.json` file like this:
 Click "Deploy" and wait for the deployment process to finish.
 
 #### 7. Copy the Live API URL
-After deployment, Vercel will provide you with a live URL (e.g., https://shohojbuy-backend.vercel.app). Use this in your frontend as the backend base URL.
+After deployment, Vercel will provide you with a live URL (e.g., https://shohojbuy-serverr.vercel.app). Use this in your frontend as the backend base URL.
 
 ---
 
@@ -172,16 +172,16 @@ After deployment, Vercel will provide you with a live URL (e.g., https://shohojb
 
    - `productApi.ts`:
      ```ts
-     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-backend.vercel.app/api/v1/products" })
+     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-serverr.vercel.app/api/v1/products" })
      ```
 
    - `cartApi.ts`:
      ```ts
-     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-backend.vercel.app/api/v1/carts" })
+     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-serverr.vercel.app/api/v1/carts" })
      ```
 
 5. Push the changes. Vercel will auto-deploy.
-6. Your site is now live at: `https://shohojbuy-client.vercel.app/`
+6. Your site is now live at: `https://shohoj-buy.vercel.app/`
 
 ---
 
