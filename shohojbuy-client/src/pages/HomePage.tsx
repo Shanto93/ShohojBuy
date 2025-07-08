@@ -1,5 +1,11 @@
+import AllProduct from "@/modules/Home/AllProduct";
+
 const HomePage = () => {
-  return <div>This is Home</div>;
+  return (
+    <div>
+      <AllProduct></AllProduct>
+    </div>
+  );
 };
 
 export default HomePage;
