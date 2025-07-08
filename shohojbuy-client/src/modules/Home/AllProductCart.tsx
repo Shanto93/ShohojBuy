@@ -45,17 +45,34 @@ const AllProductCart = ({ product }: { product: IProductType }) => {
             ৳ {product.price}
           </p>
           <div className="flex gap-3">
+            {/* Details Button */}
             <button
               onClick={() => product._id && handleNavigate(product._id)}
               disabled={!product._id}
-              className="w-full bg-[#18dcff] hover:bg-[#18dcff]/80 text-white text-xs font-semibold py-1 mt-2 rounded shadow-md transition-all duration-300 hover:shadow-[#18dcff] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full text-xs font-semibold py-1 mt-2 rounded-md 
+                border-2 border-[#18dcff] 
+                bg-gradient-to-b from-[#0ff] to-[#0abec7] text-black 
+                shadow-[0_4px_0_0_rgba(0,0,0,0.2)]  
+                hover:shadow-[0_0_12px_2px_rgba(236,72,153,0.6)] 
+                active:translate-y-[2px] active:shadow-none 
+                transition-all duration-200 ease-in-out 
+                disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Details
             </button>
+
+            {/* Add to Cart Button */}
             <button
               onClick={handleAddToCart}
               disabled={!product._id || isLoading}
-              className="w-full bg-[#18dcff] hover:bg-[#18dcff]/80 text-white text-xs font-semibold py-1 mt-2 rounded shadow-md transition-all duration-300 hover:shadow-[#18dcff] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full text-xs font-semibold py-1 mt-2 rounded-md 
+                border-2 border-[#18dcff] 
+                bg-gradient-to-b from-[#0ff] to-[#0abec7] text-black 
+                shadow-[0_4px_0_0_rgba(0,0,0,0.2)] 
+                hover:shadow-[0_0_12px_2px_rgba(236,72,153,0.6)] 
+                active:translate-y-[2px] active:shadow-none 
+                transition-all duration-200 ease-in-out 
+                disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? "Adding..." : "Add to Cart"}
             </button>

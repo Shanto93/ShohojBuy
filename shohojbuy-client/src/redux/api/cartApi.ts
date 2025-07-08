@@ -4,7 +4,8 @@ import type { IProductType } from "types";
 const cartApi = createApi({
   reducerPath: "cartApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: "https://shohoj-buy-server.vercel.app/api/v1",
+    // baseUrl: "http://localhost:5000/api/v1",
   }),
   tagTypes: ["Cart"],
   endpoints: (build) => ({
