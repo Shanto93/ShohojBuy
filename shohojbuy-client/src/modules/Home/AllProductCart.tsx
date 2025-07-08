@@ -22,7 +22,7 @@ const AllProductCart = ({ product }: { product: IProductType }) => {
       toast.success(`${product.title} is added to CART`);
     } catch (error) {
       console.error("Failed to add product:", error);
-      toast.error("Something went wrong");
+      toast.error(`${product.title} already added to Cart`);
     }
   };
 

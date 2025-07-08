@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import logo from "./../assets/logo.svg";
 import { Link, NavLink } from "react-router";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface NavbarProps {
   toggleSidebar: () => void;
@@ -45,6 +46,8 @@ const Navbar = ({ toggleSidebar }: NavbarProps) => {
             >
               <ShoppingCart size={24} />
             </button>
+
+            <ModeToggle></ModeToggle>
           </div>
 
           {/* Mobile Menu Button */}
