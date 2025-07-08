@@ -5,7 +5,7 @@ const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
     // baseUrl: "http://localhost:5000/api/v1",
-    baseUrl: "https://shohoj-buy-server.vercel.app/api/v1",
+    baseUrl: "https://shohojbuy-serverr.vercel.app/api/v1",
   }),
   endpoints: (build) => ({
     // GET all products
