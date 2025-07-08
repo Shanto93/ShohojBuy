@@ -2,23 +2,23 @@
 
 ## Project Overview
 
-ShohojBuy is a simple and responsive e-commerce web application that allows users to browse a list of products, view product details, add items to a cart, and proceed to checkout—all without requiring authentication. Built as a Single Page Application (SPA) using React.js, the project features a modern UI, a dynamic cart sidebar with quantity controls, and a checkout modal with form inputs.
+ShohojBuy is a simple and responsive e-commerce web application that allows users to browse a list of products, view product details, add items to a cart, and proceed to checkout—all without requiring authentication. Built as a Single Page Application (SPA) using React.js, the project features a modern UI, a dynamic cart sidebar with quantity controls, and a checkout modal with form inputs. 
+
 
 ## Live Demo
 
-You can access the live project here:
-
-- [ShohojBuy- Frontend](https://shohojbuy-client.vercel.app/)
-- [ShohojBuy - Backend](https://shohoj-buy-server.vercel.app/)
+You can access the live project here:  
+- [ShohojBuy- Frontend](https://shohoj-buy.vercel.app/)
+- [ShohojBuy - Backend](https://shohojbuy-serverr.vercel.app)
 
 ## Features
 
-- Browse and view all available products
-- View detailed information for each product
-- Add products to the shopping cart
-- Support for adding the same product multiple times and removing items from the cart
-- Seamless product checkout process
-- Robust server-side validation for secure operations
+- Browse and view all available products  
+- View detailed information for each product  
+- Add products to the shopping cart  
+- Support for adding the same product multiple times and removing items from the cart  
+- Seamless product checkout process  
+- Robust server-side validation for secure operations  
 - Fully responsive and user-friendly frontend UI
 
 ---
@@ -26,7 +26,6 @@ You can access the live project here:
 ## Tech Stack
 
 ### Frontend
-
 - React
 - TypeScript
 - Tailwind CSS
@@ -36,7 +35,6 @@ You can access the live project here:
 - Vite
 
 ### Backend
-
 - Node.js
 - Express.js
 - TypeScript
@@ -65,18 +63,15 @@ cd ShohojBuy
 ```
 
 ### 2. Install Dependencies
-
 Install all required packages listed in the package.json file:
 
 ```
 npm install
 ```
-
 ### 3. Start the Development Server
-
 Run the project in development mode:
 
-`npm run dev`
+```npm run dev```
 
 ## Deployment
 
@@ -101,13 +96,13 @@ Make sure your backend project is pushed to a GitHub repository.
 
    - **Root Directory**: Select the folder where your backend code lives (e.g., `backend/`).
    - **Framework Preset**: Choose **"Other"**.
-   - **Build Command**:
+   - **Build Command**:  
      ```bash
      npm install && npm run build
      ```
    - **Output Directory**:  
      Leave it blank or set to `.` if you're serving with Node.js.
-   - **Install Command** (if not auto-filled):
+   - **Install Command** (if not auto-filled):  
      ```bash
      npm install
      ```
@@ -151,15 +146,15 @@ In your backend folder root, add a `vercel.json` file like this:
     }
   ]
 }
+
 ```
 
-#### 6. Deploy
 
+#### 6. Deploy
 Click "Deploy" and wait for the deployment process to finish.
 
 #### 7. Copy the Live API URL
-
-After deployment, Vercel will provide you with a live URL (e.g., https://shohojbuy-backend.vercel.app). Use this in your frontend as the backend base URL.
+After deployment, Vercel will provide you with a live URL (e.g., https://shohojbuy-serverr.vercel.app). Use this in your frontend as the backend base URL.
 
 ---
 
@@ -176,22 +171,17 @@ After deployment, Vercel will provide you with a live URL (e.g., https://shohojb
 4. Update your frontend `baseQuery` URLs in:
 
    - `productApi.ts`:
-
      ```ts
-     baseQuery: fetchBaseQuery({
-       baseUrl: "https://shohojbuy-backend.vercel.app/api/v1/products",
-     });
+     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-serverr.vercel.app/api/v1/products" })
      ```
 
    - `cartApi.ts`:
      ```ts
-     baseQuery: fetchBaseQuery({
-       baseUrl: "https://shohojbuy-backend.vercel.app/api/v1/carts",
-     });
+     baseQuery: fetchBaseQuery({ baseUrl: "https://shohojbuy-serverr.vercel.app/api/v1/carts" })
      ```
 
 5. Push the changes. Vercel will auto-deploy.
-6. Your site is now live at: `https://shohojbuy-client.vercel.app/`
+6. Your site is now live at: `https://shohoj-buy.vercel.app/`
 
 ---
 
@@ -203,10 +193,10 @@ After deployment, Vercel will provide you with a live URL (e.g., https://shohojb
 
 Once both the frontend and backend are running (locally or in production), you can:
 
-- Explore and browse all available products
-- View detailed information about individual products
-- Add products to your shopping cart
-- Add the same product multiple times and remove items from the cart
+- Explore and browse all available products  
+- View detailed information about individual products  
+- Add products to your shopping cart  
+- Add the same product multiple times and remove items from the cart  
 - Proceed through a smooth and secure checkout process
 
 ---
@@ -214,7 +204,6 @@ Once both the frontend and backend are running (locally or in production), you c
 ## API Endpoints
 
 ### Products (`/api/v1/products`)
-
 - `GET /` – Get all products
 - `GET /:id` – Get a single product
 - `POST /create-product` – Add a new product
@@ -222,24 +211,20 @@ Once both the frontend and backend are running (locally or in production), you c
 - `DELETE /:id` – Remove a product
 
 ### Cart (`/api/v1/carts`)
-
 - `POST /` – POST add item to cart
 - `GET /` – GET all cart items
 - `DELETE /:id` - DELETE cart item by ID
 - `PATCH /:id` - update quantity
-
 ---
 
 ## Environment Variables
 
 ### Backend `.env`
-
 ```env
 PORT=5000
 DB_URL=mongodb+srv://exampleDBUserName:examDBPassword@cluster0.tuf9wrv.mongodb.net/shohojDB?retryWrites=true&w=majority&appName=Cluster0
 NODE_ENV=development
 ```
-
 ## Author
 
 **Shanto Islam**  
