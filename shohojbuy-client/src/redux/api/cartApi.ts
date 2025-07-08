@@ -1,0 +1,32 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { IProductType } from "types";
+
+const cartApi = createApi({
+  reducerPath: "cartApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5000/api/v1",
+  }),
+  tagTypes: ["Cart"],
+  endpoints: (build) => ({
+    getAllCartProducts: build.query<{ data: IProductType[] }, void>({
+      query: () => "/carts",
+      providesTags: ["Cart"],
+    }),
+    createCartItem: build.mutation<
+      { message: string; data: IProductType },
+      IProductType
+    >({
+      query: (product) => ({
+        url: "/carts",
+        method: "POST",
+        body: product,
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+  }),
+});
+
+export const { useGetAllCartProductsQuery, useCreateCartItemMutation } =
+  cartApi;
+
+export default cartApi;
