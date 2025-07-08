@@ -6,4 +6,5 @@ export interface IProductType {
   image: string;
   createdAt?: string;
   updatedAt?: string;
+  quantity?: number | undefined;
 }

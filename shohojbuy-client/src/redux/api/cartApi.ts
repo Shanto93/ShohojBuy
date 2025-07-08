@@ -12,6 +12,26 @@ const cartApi = createApi({
       query: () => "/carts",
       providesTags: ["Cart"],
     }),
+    updateCartItemQuantity: build.mutation<
+      { message: string },
+      { id: string; quantity: number }
+    >({
+      query: ({ id, quantity }) => ({
+        url: `/carts/${id}`,
+        method: "PATCH",
+        body: { quantity },
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+
+    deleteCartItem: build.mutation<{ message: string }, string>({
+      query: (id) => ({
+        url: `/carts/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+
     createCartItem: build.mutation<
       { message: string; data: IProductType },
       IProductType
@@ -26,7 +46,11 @@ const cartApi = createApi({
   }),
 });
 
-export const { useGetAllCartProductsQuery, useCreateCartItemMutation } =
-  cartApi;
+export const {
+  useGetAllCartProductsQuery,
+  useCreateCartItemMutation,
+  useUpdateCartItemQuantityMutation,
+  useDeleteCartItemMutation,
+} = cartApi;
 
 export default cartApi;
